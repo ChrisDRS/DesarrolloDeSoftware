@@ -1,0 +1,37 @@
+package ejercicioN15;
+import java.util.*;
+
+public class salarioBruto {
+
+	public static void main(String[] args) 
+	{
+		// Declaración de datos
+		String nombre;
+		float slrH, horasT, desc, slrM, slrA, valorD, slrN;
+		Scanner sc = new Scanner(System.in);
+		
+		// Lineas de instrucciones
+		System.out.println("Ingrese su nombre:");
+		nombre = sc.nextLine();
+		System.out.println("Ingrese su salario por hora:");
+		slrH = sc.nextFloat();
+		System.out.println("Ingrese el numero de horas trabajadas:");
+		horasT = sc.nextFloat();
+		System.out.println("Ingrese un porcentaje de descuento (En lugar de % coloque 0. antes del digito):");
+		desc = sc.nextFloat();
+		
+		slrM = slrH*horasT;
+		slrA = slrM*12;
+		valorD = slrA*desc/12;
+		slrN = slrM-valorD;
+		
+		System.out.println("---------------------------------");
+		System.out.println(nombre);
+		System.out.println("Salario bruto:             "+slrM);
+		System.out.println("Valor de descuento:        "+valorD);
+		System.out.println("Salario neto:              "+slrN);
+		System.out.println("---------------------------------");
+
+	}
+
+}

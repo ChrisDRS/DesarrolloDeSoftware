@@ -1,0 +1,39 @@
+package EjercicioN10;
+
+import java.util.Scanner;
+
+public class minimoUnPositivo 
+{
+
+	//	INSTRUCCIONES
+	/*
+	  	Lea dos números e imprima ambos números si por lo menos uno de ellos es positivo.
+	*/
+	
+	public static void main(String[] args) 
+	{
+		//	Declaracion de datos 
+		int a, b;
+		
+		//	Entrada de datos
+		try (Scanner sc = new Scanner(System.in)) 
+		{
+			System.out.println("Ingrese el primer numero");
+			a = sc.nextInt();
+			System.out.println("Ingrese el segundo numero");
+			b = sc.nextInt();
+		}
+		
+		//	Bloque de condicion
+		if(a>0)
+			System.out.println(a+", "+b);
+		else
+			if(b>0)
+				System.out.println(a+", "+b);
+			else
+				System.out.println("Ninguno de los numeros es positivo");
+
+
+	}
+
+}

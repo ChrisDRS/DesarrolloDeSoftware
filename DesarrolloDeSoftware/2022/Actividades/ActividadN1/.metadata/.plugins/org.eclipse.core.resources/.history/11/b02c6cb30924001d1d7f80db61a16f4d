@@ -1,0 +1,10 @@
+package ejercicioN16;
+
+public class descSalario {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,29 @@
+package EjercicioN8;
+import java.util.*;
+
+public class soloPositivos {
+
+	public static void main(String[] args)
+	{
+		Scanner sc = new Scanner(System.in);
+		int a, b;
+		
+		System.out.println("Ingrese el primer numero");
+		a = sc.nextInt();
+		System.out.println("Ingrese el segundo numero");
+		b = sc.nextInt();
+		
+		if(a>0 && b>0)
+			System.out.println(a+", "+b);
+		else
+			if(a>0)
+				System.out.println(a);
+			else
+				if(b>0)
+					System.out.println(b);
+				else
+					System.out.println("Ninguno de los numeros ingresados es positivo.");
+			
+	}
+
+}

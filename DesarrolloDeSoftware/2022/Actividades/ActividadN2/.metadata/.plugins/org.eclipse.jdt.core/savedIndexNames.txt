@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\criss\OneDrive\Documentos\Programación\JAVA\DesarrolloDeSoftware\2022\ActividadN2\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+2097050964.index
+3612130789.index

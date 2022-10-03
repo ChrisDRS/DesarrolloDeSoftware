@@ -1,0 +1,30 @@
+package EjercicioN5;
+
+import java.util.Scanner;
+
+public class hombreCasado 
+{
+
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		String nombre;
+		int edad;
+		char sexo, statCivil;
+		
+		System.out.println("Ingrese un nombre");
+		nombre = sc.nextLine();
+		System.out.println("Ingrese una edad");
+		edad = sc.nextInt();
+		System.out.println("Ingrese un sexo (si es masculindo ingrese m, si es femenino ingrese f)");
+		sexo = sc.nextLine();
+		System.out.println("Ingrese un estado civil (Casado:C, Soltero:S, Divorciado:D, Unido:U, Viudo:V)");
+		statCivil = sc.nextLine();
+		
+		if(edad>17)
+			System.out.println(nombre +", Usted es un hombre casado");
+		else
+			System.out.println(nombre);
+	}
+
+}

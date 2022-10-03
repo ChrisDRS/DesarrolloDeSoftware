@@ -1,0 +1,208 @@
+package pktActividadN2;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class clsActividadN2 
+{
+	public static void main(String[] args) throws NumberFormatException, IOException 
+	{
+		int caso;
+		BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
+		System.out.print(" \n ProblemaN1: 1 \n ProblemaN2: 2 \n ProblemaN3: 3 \n ProblemaN4: 4 \n Ingrese el valor del problema que desea ejecutar: \n");
+		caso = Integer.parseInt(objLeer.readLine());
+		
+		//	Condicion para la selección de casos
+		if(caso>0 && caso<=4)
+		{
+		//	Seleccion de casos
+		switch(caso)
+			{
+				case 1:
+					mtdProblemaN1();
+					break;
+				case 2:
+					mtdProblemaN2();
+					break;
+				case 3:
+					mtdProblemaN3();
+					break;
+				case 4:
+					mtdProblemaN4();
+					break;
+			}
+		}
+		else
+			System.out.print("\n El valor ingresado es incorrecto.");
+	}
+	public static void mtdProblemaN1() throws NumberFormatException, IOException 
+	{
+		//	Entrada de datos
+		int articulo = 1,cantidadA;
+		double cstArticulo, cstTotal=0, impuesto, vlrCompra, total;
+		BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
+		
+		System.out.println("----- Costo de 10 artículos -----");
+		
+		// Ciclo repetitivo
+		while(articulo<=10)
+		{
+		System.out.println("Ingrese la cantidad del articulo #"+articulo+": ");
+		cantidadA = Integer.parseInt(objLeer.readLine());
+		System.out.println("Ingrese el costo del articulo #"+articulo+": ");
+		cstArticulo = Double.parseDouble(objLeer.readLine());
+		cstTotal = cstTotal + (cstArticulo*cantidadA);
+		articulo++;
+		}
+		vlrCompra = cstTotal;
+		impuesto = vlrCompra*0.07;
+		total = vlrCompra+impuesto;
+		
+		//	Salida de datos
+		System.out.print("\n+----------------------------+-----------+");
+		System.out.print("\n  Valor de compra:           |");
+		System.out.printf("   %.2f", vlrCompra);
+		System.out.print("\n  Total cobrado en impuesto: |");
+		System.out.printf("   %.2f", impuesto);
+		System.out.print("\n  Costo total de la venta:   |");
+		System.out.printf("   %.2f", total);
+		System.out.println("\n+----------------------------+-----------+");
+	}
+	/**
+	 * @throws NumberFormatException
+	 * @throws IOException
+	 */
+	public static void mtdProblemaN2() throws NumberFormatException, IOException 
+	{
+		//	Entrada de datos
+		double a=1,b,c;
+		double promedio=0;
+		BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
+		
+		System.out.println("----- Promedio de tres números -----");
+
+		//	Ciclo repetitivo
+		while(a>0)
+			{
+				System.out.print("\n Ahora vamos a sacar el promedio de tres números...");
+				System.out.print("\n Ingrese el primer número: ");
+				a = Double.parseDouble(objLeer.readLine());
+				System.out.print("\n Ingrese el segundo número: ");
+				b = Double.parseDouble(objLeer.readLine());
+				System.out.print("\n Ingrese el tercer número: ");
+				c = Double.parseDouble(objLeer.readLine());
+
+				promedio = a + b + c;
+				promedio = promedio/3;
+				System.out.print("\n El promedio de los numeros ingresados es ");
+				System.out.printf(" %.1f",promedio);
+				System.out.print("\n");
+			}
+	}
+	public static void mtdProblemaN3() throws NumberFormatException, IOException 
+	{
+		//	Entrada de datos
+		int estudiante=1;
+		double parcialA,parcialB,parcialC,parcial, examenFinal,trabajoFinal, calificacion;
+		BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
+		char nota=' ';
+
+		System.out.println("----- Promedio de 25 estudiantes -----");
+
+		// Ciclo repetitivo
+		while(estudiante<=25)
+		{
+			System.out.println("\nPromededio del estudiante #"+estudiante);
+
+			//	Entrada de datos
+			System.out.print("	Ingrese la calificación de su primer parcial:	");
+			parcialA = Double.parseDouble(objLeer.readLine());
+			System.out.print("	Ingrese la calificación de su segundo parcial:	");
+			parcialB = Double.parseDouble(objLeer.readLine());
+			System.out.print("	Ingrese la calificación de su tercer parcial:	");
+			parcialC = Double.parseDouble(objLeer.readLine());
+			parcial = (parcialA+parcialB+parcialC)/3;
+
+			System.out.print("	Ingrese la calificación de su examen final:	");
+			examenFinal = Double.parseDouble(objLeer.readLine());
+
+			System.out.print("	Ingrese la calificación de su trabajo final:	");
+			trabajoFinal = Double.parseDouble(objLeer.readLine());
+			
+			// Ecuaciones
+			parcial = parcial*0.55;
+			examenFinal = examenFinal*0.30;
+			trabajoFinal = trabajoFinal*0.15;
+			calificacion = parcial+examenFinal+trabajoFinal;
+
+			//	Condición
+			if(calificacion>91)
+				nota='A';
+			else
+				if(calificacion>81)
+					nota='B';
+				else
+					if(calificacion>71)
+						nota='C';
+					else
+						if(calificacion>61)
+							nota='D';
+						else
+							if(calificacion>51)
+								nota='E';
+							else
+								if(calificacion>41)
+									nota='F';
+								else
+									if(calificacion>31)
+										nota='G';
+									else
+										if(calificacion>21)
+											nota='H';
+										else
+											if(calificacion>11)
+												nota='I';
+											else
+												if(calificacion>1)
+													nota='J';
+											
+			//	Salida de datos
+			System.out.print("\n	La calificación del estudiante #"+estudiante+" es:		");
+			System.out.printf("%.1f",calificacion);
+			System.out.print(" ("+nota+").\n");
+			System.out.println("");
+			estudiante++;
+		}
+	}
+	public static void mtdProblemaN4() throws NumberFormatException, IOException 
+	{
+		//	Entrada de datos
+		int cliente=1;
+		double descuento, vlrCompra, tltPago;
+		BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
+
+		System.out.println("----- Descuento de una tienda -----");
+
+		//	Ciclo repetitivo
+		while(cliente==1)
+		{
+			System.out.print("\n Añadiremos un descuento a su compra...");
+			System.out.print("\n	Ingrese el costo total a pagar:	");
+			vlrCompra = Double.parseDouble(objLeer.readLine());
+			descuento = vlrCompra*0.15;
+			tltPago = vlrCompra-descuento;
+
+			//	Salida de datos 
+			System.out.println("\n+-----------------------+-------------------+");
+			System.out.print("  Valor de su compra	|	");
+			System.out.printf("%.2f",vlrCompra);
+			System.out.print("\n  Descuento		|	");
+			System.out.printf("%.2f",descuento);
+			System.out.print("\n  Total de su compra	|	");
+			System.out.printf("%.2f",tltPago);
+			System.out.println("\n+-----------------------+-------------------+");
+			System.out.println("\nSi desea continuar como nuevo cliente, ingrese 1, para terminar ingrese 0");
+		cliente = Integer.parseInt(objLeer.readLine());
+		}
+	}
+}

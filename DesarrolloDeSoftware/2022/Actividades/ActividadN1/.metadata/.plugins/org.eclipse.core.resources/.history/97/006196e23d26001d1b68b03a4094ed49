@@ -1,0 +1,28 @@
+package ejercicioN12;
+import java.util.*;
+
+public class sumaNegativa {
+
+	public static void main(String[] args) 
+	{
+		int a, b;
+		
+		try (Scanner sc = new Scanner(System.in)) {
+			System.out.println("Ingrese el primer numero");
+			a = sc.nextInt();
+			System.out.println("Ingrese el segundo numero");
+			b = sc.nextInt();
+		}
+		int x =a+b;
+		
+		while(x<0) 
+		{
+			System.out.println(a+" "+b+" = "+x);
+		break;	
+		}
+		//else
+		//	System.out.println("La suma es positiva.");
+
+	}
+
+}

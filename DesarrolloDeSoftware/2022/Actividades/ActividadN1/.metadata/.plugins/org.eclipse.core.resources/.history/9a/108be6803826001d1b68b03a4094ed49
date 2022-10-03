@@ -1,0 +1,10 @@
+package ejercicioN21;
+
+public class ordenarNumeros {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

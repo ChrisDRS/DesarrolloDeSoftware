@@ -1,0 +1,43 @@
+package pktActividadN2;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class clsActividadN2 
+{
+
+	public static void main(String[] args) 
+	{
+		System.out.print("\n Inserte el valor del problema que desea ejecutar: \n ProblemaN1 = 1 \n ProblemaN2 = 2 \n ProblemaN3 = 3 \n ProblemaN4 = 4 ");
+	}
+	public void mtdProblemaN1() throws NumberFormatException, IOException 
+	{
+		BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
+		
+		int continuar=1;
+		double cstArticulo, cstTotal, cantidadA, impuesto, impuestoTtl, vlrCompra;
+		String nombreArtcl;
+		
+		System.out.println("----- Costo de un Articulo -----");
+		
+		
+		System.out.println("Ingrese el costo del articulo: ");
+		cstArticulo = Double.parseDouble(objLeer.readLine());
+		System.out.println("Ingrese la cantidad de articulos: ");
+		cantidadA = Double.parseDouble(objLeer.readLine());
+		
+		
+	}
+	public void mtdProblemaN2() 
+	{
+		
+	}
+	public void mtdProblemaN3() 
+	{
+		
+	}
+	public void mtdProblemaN4() 
+	{
+		
+	}
+}

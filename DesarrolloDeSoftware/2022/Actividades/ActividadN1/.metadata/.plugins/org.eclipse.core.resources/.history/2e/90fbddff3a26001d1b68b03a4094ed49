@@ -1,0 +1,26 @@
+package EjercicioN1;
+import java.util.Scanner;
+
+public class soloMayorEdad {
+
+	public static void main(String[] args) 
+	{
+		// Declaración de datos
+		String nombre;
+		int edad;
+		
+		// Lineas de instrucciones
+		try (Scanner sc = new Scanner(System.in)) 
+		{
+			System.out.println("Ingrese un nombre");
+			nombre = sc.nextLine();
+			System.out.println("Ingrese una edad");
+			edad = sc.nextInt();
+		}
+		
+		//	Bloque de condicion
+		if(edad>17)
+			System.out.println(nombre);
+	}
+
+}

@@ -1,0 +1,26 @@
+package EjercicioN2;
+
+import java.util.Scanner;
+
+public class menorNoVota {
+
+	public static void main(String[] args) 
+	{
+		// Declaración de datos
+		Scanner sc = new Scanner(System.in);
+		String nombre;
+		int edad;
+		
+		// Lineas de instrucciones
+		System.out.println("Ingrese un nombre");
+		nombre = sc.nextLine();
+		System.out.println("Ingrese una edad");
+		edad = sc.nextInt();
+		
+		if(edad>17)
+			System.out.println(nombre);
+		else
+			System.out.println("no puede votar");
+	}
+
+}

@@ -1,0 +1,11 @@
+package ejercicioN13;
+import java.util.*;
+
+public class cociente 
+{ 
+	Scanner sc = new Scanner(System.in);
+	int a, b;
+	
+	
+	
+}

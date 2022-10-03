@@ -1,0 +1,19 @@
+package EjercicioN6;
+import java.util.Scanner;
+
+public class numeroCuadrado {
+
+	public static void main(String[] args) 
+	{
+		// Declaración de datos
+		Scanner sc = new Scanner(System.in);
+		int a;
+		
+		// Lineas de instrucciones
+		System.out.println("Ingrese un numero");
+		a = sc.nextInt();
+		System.out.println("El valor de "+a+" al cuadrado, es "+a*a);
+	}
+
+}
+   

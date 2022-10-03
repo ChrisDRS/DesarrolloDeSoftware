@@ -1,0 +1,90 @@
+= Entrada de datos en Java =
+
+
+
+================================> *BufferedReader* <================================
+
+!! BufferedReader es una clase de java, utilizada 
+!! para leer datos desde un flujo de entrada.
+
+------------ Importacion ------------
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+------------------o------------------
+
+Ejemplos de BufferedReader utilizado en distintos tipos de datos:
+
+    [JAVA]
+    
+        {
+            #   Creacion de objeto para leer los datos
+            BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
+
+            #   Entrada de int
+            int x;
+            System.out.println("Escribe un valor entero: ");
+            entrada = bufer.readLine();
+            x = Integer.parseInt(entrada);
+
+            #   Entrada de float
+            float y;
+            System.out.println("Escribe un valor flotante: ");
+            entrada = bufer.readLine();
+            y = Float.parseFloat(entrada);
+
+            #   Entrada de double
+            double z;
+            System.out.println("Escribe un valor double: ");
+            entrada = bufer.readLine();
+            z = Double.parseDouble(entrada);
+
+            #   Entrada de boolean
+            boolean b;
+            System.out.println("Escribe un valor booleano: ");
+            entrada = bufer.readLine();
+            b = Boolean.parseBoolean(entrada);
+
+            #   Entrada de char
+            char c;
+            System.out.println("Escribe un caracter: ");
+            entrada = bufer.readLine();
+            c = entrada.charAt(0);
+
+            #   Entrada de String (caracteres)
+            String cadena;
+            System.out.println("Escribe una cadena de caracteres: ");
+            entrada = bufer.readLine();
+            cadena = entrada;
+        }
+
+    [FIN]
+
+====================================================================================
+
+================================> *Scanner* <================================
+
+
+
+------------ Importacion ------------
+import java.util.Scanner;
+// o...
+import java.util.*;
+------------------o------------------
+
+
+    [JAVA]
+
+        {
+            #   Creacion del objeto para leer datos
+            Scanner objScanner = new Scanner(System.in);
+
+            #   Entrada de String
+            System.out.println("Por favor ingrese su nombre");
+            String nombre = objScanner.nextLine();
+
+            #   Entrada de int
+            System.out.println("Por favor ingrese su edad");
+            int edad = objScanner.nextInt();
+        }
+    [FIN]

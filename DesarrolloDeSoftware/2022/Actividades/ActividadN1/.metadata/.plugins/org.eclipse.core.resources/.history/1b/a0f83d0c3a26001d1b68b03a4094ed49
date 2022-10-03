@@ -1,0 +1,27 @@
+package ejercicioN20;
+import java.util.*;
+
+public class personaEstatura 
+{
+
+	public static void main(String[] args) 
+	{
+		//	Declaracion de datos
+		int altura;
+		Scanner sc = new Scanner(System.in);
+		
+		// Bloque de instrucciones
+		System.out.println("Ingrese su estatura en cm: ");
+		altura = sc.nextInt();
+		
+		if(altura<=150)
+			System.out.println("Persona de estatura baja.");
+		else
+			if(altura>150 && altura<170)
+				System.out.println("Persona de estatura media.");
+			else
+				if(altura>170)
+					System.out.println("Persona de estatura alta.");
+	}
+
+}

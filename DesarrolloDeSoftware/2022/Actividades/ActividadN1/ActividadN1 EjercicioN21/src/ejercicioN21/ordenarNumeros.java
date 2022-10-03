@@ -1,0 +1,45 @@
+package ejercicioN21;
+import java.util.*;
+
+public class ordenarNumeros 
+{
+	//	INSTRUCCIONES
+	/*
+	  	Leer tres números e imprimirlos en este orden: menor, intermedio, mayor.
+	*/
+
+	public static void main(String[] args) 
+	{
+		//	Declaración de datos
+		int a, b, c;
+
+		//	Entrada de datos
+		
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Ingrese el primer numero: ");
+			a = sc.nextInt();
+			System.out.println("Ingrese el primer numero: ");
+			b = sc.nextInt();
+			System.out.println("Ingrese el primer numero: ");
+			c = sc.nextInt();
+		
+		//	Bloque de condiciones
+		if(a>b) 
+			 if(a>c) 
+				 if(b>c)
+	                    System.out.println(c + ", " + b + ", " + a);              
+				 else
+	                    System.out.println(a + ", " + c + ", " + b);
+			 else
+	            		System.out.println(b + ", " + a + ", " + c);
+		 else
+			 if(b>c)
+				 if(a>c)
+	                    System.out.println(c + ", " + a + ", " + b);
+				 else
+	                	System.out.println(a + ", " + c + ", " + b);             
+			 else
+	            		System.out.println(a + ", " + b + ", " + c);
+	    }
+
+}

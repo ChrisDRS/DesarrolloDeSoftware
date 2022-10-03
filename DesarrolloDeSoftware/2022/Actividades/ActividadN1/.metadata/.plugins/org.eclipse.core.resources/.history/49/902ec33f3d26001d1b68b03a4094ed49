@@ -1,0 +1,25 @@
+package EjercicioN9;
+
+import java.util.Scanner;
+
+public class ambosPositivos {
+
+	public static void main(String[] args) 
+	{
+		// Declaración de datos
+		Scanner sc = new Scanner(System.in);
+		int a, b;
+		
+		// Declaración de datos
+		System.out.println("Ingrese el primer numero");
+		a = sc.nextInt();
+		System.out.println("Ingrese el segundo numero");
+		b = sc.nextInt();
+		
+		if(a>0 && b>0)
+			System.out.println(a+", "+b);
+				else
+					System.out.println("al menos uno de los numeros ingresados no es positivo.");
+	}
+
+}

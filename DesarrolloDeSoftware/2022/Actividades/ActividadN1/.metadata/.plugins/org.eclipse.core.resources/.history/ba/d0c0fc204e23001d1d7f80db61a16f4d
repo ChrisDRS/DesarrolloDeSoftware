@@ -1,0 +1,10 @@
+package ejercicioN11;
+
+public class signosDiferentes {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

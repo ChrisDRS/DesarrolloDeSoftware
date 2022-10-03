@@ -1,0 +1,37 @@
+package ejercicioN20;
+import java.util.*;
+
+public class personaEstatura 
+{
+	//	INSTRUCCIONES
+	/*
+	  	Se desea escribir un algoritmo que pida la altura de una persona,
+	  	si la altura es menor o igual a 150 cm envíe el mensaje: “Persona de estatura baja”;
+	  	si la altura está entre 151 y 170 escriba el mensaje: “Persona de estatura media”
+	  	y si la altura es mayor al 170 escriba el mensaje: “Persona de estatura alta”.
+	*/
+
+	public static void main(String[] args) 
+	{
+		//	Declaracion de datos
+		int altura;
+		
+		// Entrada de datos
+		try (Scanner sc = new Scanner(System.in)) 
+		{
+			System.out.println("Ingrese su estatura en cm: ");
+			altura = sc.nextInt();
+		}
+		
+		//	Bloque de condiciones
+		if(altura<=150)
+			System.out.println("Persona de estatura baja.");
+		else
+			if(altura>150 && altura<170)
+				System.out.println("Persona de estatura media.");
+			else
+				if(altura>170)
+					System.out.println("Persona de estatura alta.");
+	}
+
+}

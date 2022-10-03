@@ -1,0 +1,40 @@
+package ejercicioN16;
+import java.util.*;
+
+public class descSalario
+{
+
+	public static void main(String[] args) 
+	{
+		String nombre;
+		double slrM, slrN, slrA, valorD, desc;
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Ingrese su nombre:");
+		nombre = sc.nextLine();
+		System.out.println("Ingrese su salario bruto mensual:");
+		slrM = sc.nextInt();
+		slrA = slrM*12;
+		
+		if(slrM>=1500 && slrM<=3000)
+		{
+			valorD = 0.5;
+			desc = slrA*valorD/12;
+		}
+		else
+			if(slrM>=3000)
+			{
+			valorD = 0.8;
+			desc = slrA*valorD/12;
+
+			}
+			else
+				desc = 0.00;
+				
+		System.out.println(nombre);
+		System.out.println("Salario bruto:         "+slrM);
+		System.out.println("Valor de descuento:    "+desc);
+		System.out.println("Salario neto:          "+slrN);
+	}
+
+}

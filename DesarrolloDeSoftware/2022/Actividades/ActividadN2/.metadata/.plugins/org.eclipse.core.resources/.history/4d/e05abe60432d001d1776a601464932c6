@@ -1,0 +1,133 @@
+package pktActividadN2;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Calendar;
+
+public class clsActividadN2 
+{
+
+	public static void main(String[] args) throws NumberFormatException, IOException 
+	{
+		int caso;
+		BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
+		System.out.print(" \n ProblemaN1 = 1 \n ProblemaN2 = 2 \n ProblemaN3 = 3 \n ProblemaN4 = 4 \n Inserte el valor del problema que desea ejecutar: \n");
+		caso = Integer.parseInt(objLeer.readLine());
+		
+		if(caso>0 && caso<=4)
+		{
+		switch(caso)
+			{
+				case 1:
+					mtdProblemaN1();
+					break;
+				case 2:
+					mtdProblemaN2();
+					break;
+				case 3:
+					mtdProblemaN3();
+					break;
+				case 4:
+					mtdProblemaN4();
+					break;
+			}
+		}
+		else
+			System.out.print("\n El valor ingresado es incorrecto.");
+	}
+	public static void mtdProblemaN1() throws NumberFormatException, IOException 
+	{
+		int articulo = 1,cantidadA;
+		double cstArticulo, cstTotal=0, impuesto, vlrCompra, total;
+		BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
+		
+		System.out.println("----- Costo de un Articulo -----");
+		
+		while(articulo<=10)
+		{
+		System.out.println("Ingrese la cantidad del articulo #"+articulo+": ");
+		cantidadA = Integer.parseInt(objLeer.readLine());
+		System.out.println("Ingrese el costo del articulo #"+articulo+": ");
+		cstArticulo = Double.parseDouble(objLeer.readLine());
+		cstTotal = cstTotal + (cstArticulo*cantidadA);
+		articulo++;
+		}
+		vlrCompra = cstTotal;
+		impuesto = vlrCompra*0.07;
+		total = vlrCompra+impuesto;
+		
+		System.out.print("\n+----------------------------+-----------+");
+		System.out.print("\n  Valor de compra:           |");
+		System.out.printf("   %.2f", vlrCompra);
+		System.out.print("\n  Total cobrado en impuesto: |");
+		System.out.printf("   %.2f", impuesto);
+		System.out.print("\n  Costo total de la venta:   |");
+		System.out.printf("   %.2f", total);
+		System.out.println("\n+----------------------------+-----------+");
+	}
+	public static void mtdProblemaN2() throws NumberFormatException, IOException 
+	{
+		double a=1,b,c;
+		double promedio=0;
+		BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
+		
+		System.out.println("----- Promedio de tres números -----");
+
+		while(a>0)
+			{
+				System.out.print("\n Ahora vamos a sacar el promedio de tres números...");
+				System.out.print("\n Ingrese el primer número: ");
+				a = Double.parseDouble(objLeer.readLine());
+				System.out.print("\n Ingrese el segundo número: ");
+				b = Double.parseDouble(objLeer.readLine());
+				System.out.print("\n Ingrese el tercer número: ");
+				c = Double.parseDouble(objLeer.readLine());
+
+				promedio = a + b + c;
+				promedio = promedio/3;
+				System.out.print("\n El promedio de los numeros ingresados es ");
+				System.out.printf(" %.1f",promedio);
+				System.out.print("\n");
+			}
+		
+		
+	}
+	public static void mtdProblemaN3() throws NumberFormatException, IOException 
+	{
+		int estudiante=1;
+		double parcialA,parcialB,parcialC,parcial, examenFinal,trabajoFinal, casificacion=0;
+		BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
+
+		System.out.println("----- Promedio de estudiante -----");
+
+		while(estudiante<25)
+		{
+			System.out.print("\n Promededio del estudiante #"+estudiante);
+
+			System.out.print("\n Ingrese la calificación de su primer parcial: ");
+			parcialA = Double.parseDouble(objLeer.readLine());
+			System.out.print("\n Ingrese la calificación de su segundo parcial: ");
+			parcialB = Double.parseDouble(objLeer.readLine());
+			System.out.print("\n Ingrese la calificación de su tercer parcial: ");
+			parcialC = Double.parseDouble(objLeer.readLine());
+			parcial = (parcialA+parcialB+parcialC)/3;
+
+			System.out.print("\n Ingrese la calificación de su examen final: ");
+			examenFinal = Double.parseDouble(objLeer.readLine());
+
+			System.out.print("\n Ingrese la calificación de su trabajo final: ");
+			trabajoFinal = Double.parseDouble(objLeer.readLine());
+			
+			parcial = parcial*0.55;
+			examenFinal = examenFinal*0.30;
+			trabajoFinal = trabajoFinal*0.15;
+			calificacion = parcial+examenFinal+trabajoFinal;
+			System.out.print("\n Calificacion de ingles: "+casificacion);
+			estudiante++;
+		}
+	}
+	public static void mtdProblemaN4() 
+	{
+		
+	}
+}

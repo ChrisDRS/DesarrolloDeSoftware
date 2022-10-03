@@ -1,0 +1,15 @@
+package investigacion;
+
+public class ejemplo 
+{
+
+	public static void main(String[] args) 
+	{
+		persona a = new persona();
+		persona b = new persona();
+		
+		System.out.println(a.nombre+" "+a.apellido);
+		
+	}
+
+}

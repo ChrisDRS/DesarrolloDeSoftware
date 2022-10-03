@@ -1,0 +1,30 @@
+package ejercicioN18;
+import java.util.*;
+import javax.swing.JOptionPane;
+
+public class ecuacionCuadratica 
+{
+
+	public static void main(String[] args) 
+	{
+		//
+		int a,b,c;
+		
+		a = Integer.parseInt(JOptionPane.showInputDialog("Ingese el valor de a: "));
+		b = Integer.parseInt(JOptionPane.showInputDialog("Ingese el valor de b: "));
+		c = Integer.parseInt(JOptionPane.showInputDialog("Ingese el valor de c: "));
+		
+		double determinante=Math.pow(b, 2)-(4*a*c);
+		
+		if(determinante>0)
+		{
+			double x1=((b*(-1)) + Math.sqrt(determinante))/(2*a);
+			double x2=((b*(-1)) - Math.sqrt(determinante))/(2*a);
+			System.out.println("x1 = "+x1);
+			System.out.println("x2 = "+x2);
+		}
+		else
+			System.out.println("EL determinante es negativo.");
+	}
+
+}

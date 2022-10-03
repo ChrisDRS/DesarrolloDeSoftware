@@ -1,0 +1,24 @@
+package ejercicioN13;
+import java.util.*;
+
+public class cociente 
+{
+
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		int a, b;
+		
+		System.out.println("Ingrese un dividendo");
+		a = sc.nextInt();
+		System.out.println("Ingrese un divisor");
+		b = sc.nextInt();
+		int x = a / b;
+		
+		if(b==0)
+			System.out.println("La division no es posible");
+		else
+			System.out.println(a+" entre "+b+" es igual a "+x+".");
+	}
+
+}

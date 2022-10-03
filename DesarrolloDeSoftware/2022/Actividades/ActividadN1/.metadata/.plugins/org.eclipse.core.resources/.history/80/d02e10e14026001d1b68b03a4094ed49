@@ -1,0 +1,19 @@
+package ejercicioN18;
+import java.util.*;
+
+public class promocionCent 
+{
+
+	public static void main(String[] args) 
+	{
+		// Declaracion de datos
+		float slr;
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Ingrese su salario: ");
+		slr = sc.nextFloat();
+		
+		System.out.println();
+	}
+
+}

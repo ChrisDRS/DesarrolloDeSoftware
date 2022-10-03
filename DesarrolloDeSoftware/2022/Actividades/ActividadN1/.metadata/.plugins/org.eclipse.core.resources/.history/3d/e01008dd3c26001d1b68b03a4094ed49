@@ -1,0 +1,24 @@
+package EjercicioN7;
+import java.util.*;
+
+public class raizNegativa 
+{
+
+	public static void main(String[] args) 
+	{
+		// Declaración de datos
+		int a;
+		Scanner sc = new Scanner(System.in);
+		
+		// Lineas de instrucciones
+		System.out.println("Ingrese un numero");
+		a = sc.nextInt();
+		double x = Math.sqrt(a);
+		
+		if(a<0)
+			System.out.println("La raíz cuadrada de "+a+" es imaginaria");
+		else
+			System.out.println("La raíz cuadrada de "+a+" es "+x+".");
+	}
+
+}

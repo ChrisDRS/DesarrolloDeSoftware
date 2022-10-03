@@ -1,0 +1,52 @@
+package ejercicioN17;
+import java.util.*;
+public class horasExtra 
+{
+
+	public static void main(String[] args) 
+	{
+		//	Declaración de datos
+		String nombre;
+		double horasT,slrH,horasE,slrN;
+		double recargo = 0.35;
+		Scanner sc = new Scanner(System.in);
+		
+		//	Lineas de instrucciones
+		System.out.println("Ingrese su nombre: ");
+		nombre = sc.nextLine();
+		System.out.println("Ingrese el numero de horas trabajadas durante la semana: ");
+		horasT = sc.nextDouble();
+		System.out.println("Ingrese su salario por hora: ");
+		slrH = sc.nextDouble();
+		
+		slrN=horasT*slrH;
+		horasE = horasT-48;
+		
+		if(horasT>48)
+		{
+			recargo=horasE*recargo;
+			recargo=slrN*recargo;
+			slrN=slrN+recargo;
+		}
+		else
+		{
+			horasE=0;
+			recargo=0.00;
+		}
+		
+		System.out.println("-----------------------------------");
+		System.out.println(nombre);
+		System.out.println("");
+		System.out.println("Horas extra:               "+horasE);
+		System.out.println("Recargo por horas extra:   ");
+		System.out.printf("                              %.2f", recargo );
+		System.out.println("");
+		System.out.println("Salario neto:              ");
+		System.out.printf("                              %.2f", slrN ); 
+		System.out.println("");
+		System.out.println("-----------------------------------");
+
+		
+	}
+
+}

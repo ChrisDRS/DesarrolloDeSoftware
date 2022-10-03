@@ -1,0 +1,64 @@
+package pktActividadN2;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class clsActividadN2 
+{
+
+	public static void main(String[] args) throws NumberFormatException, IOException 
+	{
+		int caso;
+		BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
+		System.out.print(" \n ProblemaN1 = 1 \n ProblemaN2 = 2 \n ProblemaN3 = 3 \n ProblemaN4 = 4 2\n Inserte el valor del problema que desea ejecutar: \n");
+		caso = Integer.parseInt(objLeer.readLine());
+		
+		if(caso>0 && caso<=4)
+		{
+		switch(caso)
+			{
+				case 1:
+					mtdProblemaN1();
+				case 2:
+					mtdProblemaN2();
+				case 4:
+					mtdProblemaN3();
+				case 3:
+					mtdProblemaN4();
+			}
+		}
+		else
+			System.out.print("\n El valor ingresado es incorrecto.");
+	}
+	public static void mtdProblemaN1() throws NumberFormatException, IOException 
+	{
+		int continuar = 0;
+		double articulo = 0, cstArticulo, cstTotal, cantidadA, impuesto, impuestoTtl, vlrCompra;
+		BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
+		
+		System.out.println("----- Costo de un Articulo -----");
+		
+		while(continuar<=10)
+		{
+		System.out.println("Ingrese la cantidad del articulo: ");
+		cantidadA = Double.parseDouble(objLeer.readLine());
+		System.out.println("Ingrese el costo del articulo: ");
+		cstArticulo = Double.parseDouble(objLeer.readLine());
+		articulo = cstArticulo*cantidadA;
+		continuar++;
+		}
+		System.out.print("\n Valor total: "+articulo);
+	}
+	public static void mtdProblemaN2() 
+	{
+		
+	}
+	public static void mtdProblemaN3() 
+	{
+		
+	}
+	public static void mtdProblemaN4() 
+	{
+		
+	}
+}
