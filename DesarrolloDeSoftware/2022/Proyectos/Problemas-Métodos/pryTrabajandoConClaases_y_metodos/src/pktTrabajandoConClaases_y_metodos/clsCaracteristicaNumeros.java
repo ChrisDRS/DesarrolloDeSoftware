@@ -2,67 +2,46 @@ package pktTrabajandoConClaases_y_metodos;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
-
+ 
 public class clsCaracteristicaNumeros 
 {
-    public void mtdEnteroPotencia() throws NumberFormatException, IOException 
+    static BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
+
+    public void mtdEnteroPotencia(int base_p, int exponente_p, int multiplicacion_p, int resultado_p) throws NumberFormatException, IOException 
     {
-        BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
-        int base=0,exponente=0, multiplicacion=0, resultado=0;
-
-        System.out.println("Potencia de un entero...");
-        System.out.print("\nInserte la base de la potencia: ");
-        base = Integer.parseInt(objLeer.readLine());
-        System.out.print("\nInserte el exponente de la potencia: ");
-        exponente = Integer.parseInt(objLeer.readLine());
-
-        multiplicacion=base;
-        for(int i=1;i<exponente;i++)
+        multiplicacion_p=base_p;
+        for(int i=1;i<exponente_p;i++)
         {
-            multiplicacion = multiplicacion*base;
-            resultado = multiplicacion; 
+            multiplicacion_p = multiplicacion_p*base_p;
+            resultado_p = multiplicacion_p;
         }
-        System.out.println("\nResultado: "+resultado);
+        System.out.println("\nResultado: "+resultado_p);
     }
-    public void mtdPrimo() throws NumberFormatException, IOException 
+    public void mtdPrimo(int numPrimo, char primo) throws NumberFormatException, IOException 
     {
-        int n=0;
-        char primo='S';
-        BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("¿Es éste un número primo?");
-        System.out.print("Inserte un numero: ");
-        n = Integer.parseInt(objLeer.readLine());
-
-        if(n<=1)
+        if(numPrimo<=1)
         primo = 'N';
-        else if(n==2)
+        else if(numPrimo==2)
             primo='S';
            else 
             {
-                for(int i=2; i<n;i++)
+                for(int i=2; i<numPrimo;i++)
                 {
-                    if(n % i == 0)
+                    if(numPrimo % i == 0)
                     primo='N';
                 }
             }
         System.out.println(primo);
     }
-    public void mtdPerfecto() throws NumberFormatException, IOException 
+    public void mtdPerfecto(int numPerfecto, int xPerfecto, int perfecto, char esPerfecto) throws NumberFormatException, IOException 
     {
-        int n, x=2, perfecto=0;
-        char esPerfecto=' ';
-        BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("¿Es éste un número perfecto?");
-        System.out.print("Inserte un número: ");
-        n = Integer.parseInt(objLeer.readLine());
-
-        while(x<=n)
+        while(xPerfecto<=numPerfecto)
         {
-            if(n % x ==0)
-            perfecto = perfecto+(n/x);
-            x++;
+            if(numPerfecto % xPerfecto ==0)
+            perfecto = perfecto+(numPerfecto/xPerfecto);
+            xPerfecto++;
         }
-        if(perfecto==n)
+        if(perfecto==numPerfecto)
             esPerfecto='S';
         else
             esPerfecto='N';
@@ -71,147 +50,94 @@ public class clsCaracteristicaNumeros
     }
     public void mtdFeliz() 
     {
-        
+        System.out.println("Éste metodo no pudo ser resuelto.");
     }
-    public void mtdInvertir() throws NumberFormatException, IOException 
+    public void mtdInvertir(long numeroInvertir, long invertido, long restoInvertido) throws NumberFormatException, IOException 
     {
-        long numero, invertido = 0, resto;
-        BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Invertir número...");
-        System.out.print("Ingrese un número: ");
-        numero = Long.parseLong(objLeer.readLine());
- 
-        while(numero>0) 
+        while(numeroInvertir>0) 
         {
-         resto = numero % 10;
-         invertido = invertido * 10 + resto;
-         numero /= 10;
+         restoInvertido = numeroInvertir % 10;
+         invertido = invertido * 10 + restoInvertido;
+         numeroInvertir /= 10;
         }
       System.out.println(invertido);
     }
-    public void mtdCifra() throws NumberFormatException, IOException 
+    public void mtdCifra(long numCifra, long cifra) throws NumberFormatException, IOException 
     {
-        long num, cifra=0;
-       BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
-       System.out.println("¿Cúantas cifras tiene el número?");
-       System.out.print("Inserte el número: ");
-       num = Long.parseLong(objLeer.readLine());
-
-       while(num!=0)
+       while(numCifra!=0)
        {
-            num = num/10;
+            numCifra = numCifra/10;
             cifra++;
        }
        System.out.println(cifra);
     }
-    public void mtdUlam() throws NumberFormatException, IOException 
+    public void mtdUlam(int xUlam) throws NumberFormatException, IOException 
     {
-        int x=0;
-        BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Conjetura de Ulam...");
-        System.out.print("Ingrese un numero: ");
-        x=Integer.parseInt(objLeer.readLine());
-        
-        while (x!=1)
+        while (xUlam!=1)
         {
-            if (x%2==0)
-                x=x/2;
+            if (xUlam%2==0)
+                xUlam=xUlam/2;
             else 
-                x=(x*3)+1;
-        System.out.println(x);
+                xUlam=(xUlam*3)+1;
+        System.out.print(xUlam+", ");
         }
     }
-    public void mtdAbundante() throws NumberFormatException, IOException 
+    public void mtdAbundante(int sumaAbun, int numAbun, boolean abundante) throws NumberFormatException, IOException 
     {
-        int suma = 0, num;
-        boolean abundante = false;
-        BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("¿Será éste un número abundante?");
-        System.out.print("Ingrese un numero: ");
-        num = Integer.parseInt(objLeer.readLine());
-        
-        for (int i = 1; i < num; i++)
+        for (int i = 1; i < numAbun; i++)
         {
-            if ( num%i == 0)
-                suma+=i;
+            if ( numAbun%i == 0)
+                sumaAbun+=i;
         }
-            if (suma > num)
+            if (sumaAbun > numAbun)
                 abundante = true;
             System.out.println(abundante);
     }
-    public void mtdArmstrong() throws NumberFormatException, IOException 
+    public void mtdArmstrong(int c_Armstrng, int a_Armstrng, int temp_Armstrng, int n_Armstrng, boolean strong) throws NumberFormatException, IOException 
     {
-        int c = 0, a, temp, n;
-        boolean strong = false;
-        BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("¿Será éste un número armstrong?");
-        System.out.print("Ingrese el número: ");
-        n = Integer.parseInt(objLeer.readLine());
-        temp = n;
-        while (n > 0) 
+        temp_Armstrng = n_Armstrng;
+        while (n_Armstrng > 0) 
         {
-            a = n % 10;
-            n = n / 10;
-            c = c + (a * a * a);
+            a_Armstrng = n_Armstrng % 10;
+            n_Armstrng = n_Armstrng / 10;
+            c_Armstrng = c_Armstrng + (a_Armstrng * a_Armstrng * a_Armstrng);
         }
-        if (temp == c)
+        if (temp_Armstrng == c_Armstrng)
             strong = true;
 
         System.out.println(strong);
     }
-    public void mtdParImpar() throws NumberFormatException, IOException 
+    public void mtdParImpar(int num_PoI, char parImpar) throws NumberFormatException, IOException 
     {
-        int num;
-       char parImpar=' ';
-       BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
-       System.out.println("¿El número es par o impar?");
-       System.out.print("Inserte un número: ");
-       num = Integer.parseInt(objLeer.readLine());
-
-        if(num%2==0)
+        if(num_PoI%2==0)
             parImpar='P';
         else
             parImpar='I';
         System.out.println(parImpar);
     }
-    public void mtdFactorial() throws NumberFormatException, IOException 
+    public void mtdFactorial(int num_factor, double factorial) throws NumberFormatException, IOException 
     {
-        BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
-		int num;
-        double factorial;
-        System.out.println("Factorial de un número...");
-		System.out.print("Ingrese un número: ");
-		num=Integer.parseInt(objLeer.readLine());
         factorial=1;
-		for (int i=num;i>0;i--)
+		for (int i=num_factor;i>0;i--)
 		    factorial=factorial*i;
-		System.out.println("Resultado: "+factorial);
+		System.out.print("Resultado: "+factorial);
     }
-    public void mtdAmigos() throws NumberFormatException, IOException 
-    {
-        int i,suma=0, n1, n2;
-        char amigos = ' ';
-        BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("¿Serán estos números amigos?");
-        System.out.print("Ingrese un primer número: ");
-        n1 = Integer.parseInt(objLeer.readLine());
-        System.out.print("Ingrese un segundo número: ");
-        n2 = Integer.parseInt(objLeer.readLine());
-  
-        for(i = 1;i < n1;i++)
+    public void mtdAmigos(int i_amigos, int suma_amigos, int n1_amigos, int n2_amigos, char amigos) throws NumberFormatException, IOException 
+    {  
+        for(i_amigos = 1;i_amigos < n1_amigos;i_amigos++)
         {
-            if(n1%i==0)
-                suma=suma+i;
+            if(n1_amigos%i_amigos==0)
+                suma_amigos=suma_amigos+i_amigos;
         }
-        if(suma==n2)
+        if(suma_amigos==n2_amigos)
         {
-           suma=0;
-           for(i = 1;i < n2;i++)
+           suma_amigos=0;
+           for(i_amigos = 1;i_amigos < n2_amigos;i_amigos++)
             {
-                if(n2%i==0)
-                    suma=suma+i;
+                if(n2_amigos%i_amigos==0)
+                    suma_amigos=suma_amigos+i_amigos;
             }
-            if(suma==n1)
+            if(suma_amigos==n1_amigos)
                 amigos = 'S';
             else
                 amigos = 'N';
@@ -220,23 +146,17 @@ public class clsCaracteristicaNumeros
                 amigos = 'N';
         System.out.println(amigos);
     }
-    public void mtdCapicua() throws NumberFormatException, IOException 
+    public void mtdCapicua(int num_cap, int aux_cap, int inverso_cap, int cifra_cap, char capicua) throws NumberFormatException, IOException 
     {
-        int num, aux, inverso = 0, cifra;
-        char capicua = ' ';
-        BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("¿El número es capicua?");
-        System.out.print("Ingrese un número (de más de dos cifras): ");                                                 
-        num = Integer.parseInt(objLeer.readLine());
-        while (num<10);
-                aux = num;
-        while (aux!=0)
+        while (num_cap<10);
+                aux_cap = num_cap;
+        while (aux_cap!=0)
         {
-            cifra = aux % 10;
-            inverso = inverso * 10 + cifra;
-            aux = aux / 10;
+            cifra_cap = aux_cap % 10;
+            inverso_cap = inverso_cap * 10 + cifra_cap;
+            aux_cap = aux_cap / 10;
         }
-        if(num == inverso)
+        if(num_cap == inverso_cap)
             capicua = 'S';
         else
             capicua='N';
@@ -244,24 +164,6 @@ public class clsCaracteristicaNumeros
     }
     public void mtdPalindrome() throws NumberFormatException, IOException 
     {
-        int num, aux, inverso = 0, cifra;
-        char palindromo = ' ';
-        BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("¿El número es palíndromo?");
-        System.out.print("Ingrese un número (de más de dos cifras): ");                                                 
-        num = Integer.parseInt(objLeer.readLine());
-        while (num<10);
-                aux = num;
-        while (aux!=0)
-        {
-            cifra = aux % 10;
-            inverso = inverso * 10 + cifra;
-            aux = aux / 10;
-        }
-        if(num == inverso)
-            palindromo = 'S';
-        else
-            palindromo='N';
-        System.out.println(palindromo);
+        System.out.println("Éste metodo no pudo ser resuelto.");
     }
 }
