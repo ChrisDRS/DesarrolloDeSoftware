@@ -1,13 +1,8 @@
 package pktTrabajandoConClaases_y_metodos;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.IOException;
  
 public class clsCaracteristicaNumeros 
 {
-    static BufferedReader objLeer = new BufferedReader(new InputStreamReader(System.in));
-
-    public void mtdEnteroPotencia(int base_p, int exponente_p, int multiplicacion_p, int resultado_p) throws NumberFormatException, IOException 
+    public int mtdEnteroPotencia(int base_p, int exponente_p, int multiplicacion_p, int resultado_p)
     {
         multiplicacion_p=base_p;
         for(int i=1;i<exponente_p;i++)
@@ -15,12 +10,12 @@ public class clsCaracteristicaNumeros
             multiplicacion_p = multiplicacion_p*base_p;
             resultado_p = multiplicacion_p;
         }
-        System.out.println("\nResultado: "+resultado_p);
+        return resultado_p;
     }
-    public void mtdPrimo(int numPrimo, char primo) throws NumberFormatException, IOException 
+    public char mtdPrimo(int numPrimo, char primo)
     {
         if(numPrimo<=1)
-        primo = 'N';
+        primo = 'N'; 
         else if(numPrimo==2)
             primo='S';
            else 
@@ -31,9 +26,9 @@ public class clsCaracteristicaNumeros
                     primo='N';
                 }
             }
-        System.out.println(primo);
+        return primo;
     }
-    public void mtdPerfecto(int numPerfecto, int xPerfecto, int perfecto, char esPerfecto) throws NumberFormatException, IOException 
+    public char mtdPerfecto(int numPerfecto, int xPerfecto, int perfecto, char esPerfecto)
     {
         while(xPerfecto<=numPerfecto)
         {
@@ -46,13 +41,13 @@ public class clsCaracteristicaNumeros
         else
             esPerfecto='N';
         
-        System.out.println(esPerfecto);
+        return esPerfecto;
     }
     public void mtdFeliz() 
     {
         System.out.println("Éste metodo no pudo ser resuelto.");
     }
-    public void mtdInvertir(long numeroInvertir, long invertido, long restoInvertido) throws NumberFormatException, IOException 
+    public long mtdInvertir(long numeroInvertir, long invertido, long restoInvertido)
     {
         while(numeroInvertir>0) 
         {
@@ -60,9 +55,9 @@ public class clsCaracteristicaNumeros
          invertido = invertido * 10 + restoInvertido;
          numeroInvertir /= 10;
         }
-      System.out.println(invertido);
+      return invertido;
     }
-    public void mtdCifra(long numCifra, long cifra) throws NumberFormatException, IOException 
+    public long mtdCifra(long numCifra, long cifra)
     {
        while(numCifra!=0)
        {
@@ -70,8 +65,9 @@ public class clsCaracteristicaNumeros
             cifra++;
        }
        System.out.println(cifra);
+       return cifra;
     }
-    public void mtdUlam(int xUlam) throws NumberFormatException, IOException 
+    public int mtdUlam(int xUlam)
     {
         while (xUlam!=1)
         {
@@ -79,10 +75,10 @@ public class clsCaracteristicaNumeros
                 xUlam=xUlam/2;
             else 
                 xUlam=(xUlam*3)+1;
-        System.out.print(xUlam+", ");
         }
+        return xUlam;
     }
-    public void mtdAbundante(int sumaAbun, int numAbun, boolean abundante) throws NumberFormatException, IOException 
+    public boolean mtdAbundante(int sumaAbun, int numAbun, boolean abundante)
     {
         for (int i = 1; i < numAbun; i++)
         {
@@ -91,9 +87,9 @@ public class clsCaracteristicaNumeros
         }
             if (sumaAbun > numAbun)
                 abundante = true;
-            System.out.println(abundante);
+        return abundante;
     }
-    public void mtdArmstrong(int c_Armstrng, int a_Armstrng, int temp_Armstrng, int n_Armstrng, boolean strong) throws NumberFormatException, IOException 
+    public boolean mtdArmstrong(int c_Armstrng, int a_Armstrng, int temp_Armstrng, int n_Armstrng, boolean strong) 
     {
         temp_Armstrng = n_Armstrng;
         while (n_Armstrng > 0) 
@@ -104,25 +100,24 @@ public class clsCaracteristicaNumeros
         }
         if (temp_Armstrng == c_Armstrng)
             strong = true;
-
-        System.out.println(strong);
+        return strong;
     }
-    public void mtdParImpar(int num_PoI, char parImpar) throws NumberFormatException, IOException 
+    public char mtdParImpar(int num_PoI, char parImpar)
     {
         if(num_PoI%2==0)
             parImpar='P';
         else
             parImpar='I';
-        System.out.println(parImpar);
+        return parImpar;
     }
-    public void mtdFactorial(int num_factor, double factorial) throws NumberFormatException, IOException 
+    public double mtdFactorial(int num_factor, double factorial)
     {
         factorial=1;
 		for (int i=num_factor;i>0;i--)
 		    factorial=factorial*i;
-		System.out.print("Resultado: "+factorial);
+        return factorial;
     }
-    public void mtdAmigos(int i_amigos, int suma_amigos, int n1_amigos, int n2_amigos, char amigos) throws NumberFormatException, IOException 
+    public char mtdAmigos(int i_amigos, int suma_amigos, int n1_amigos, int n2_amigos, char amigos)
     {  
         for(i_amigos = 1;i_amigos < n1_amigos;i_amigos++)
         {
@@ -144,9 +139,9 @@ public class clsCaracteristicaNumeros
         }        
         else
                 amigos = 'N';
-        System.out.println(amigos);
+        return amigos;
     }
-    public void mtdCapicua(int num_cap, int aux_cap, int inverso_cap, int cifra_cap, char capicua) throws NumberFormatException, IOException 
+    public char mtdCapicua(int num_cap, int aux_cap, int inverso_cap, int cifra_cap, char capicua) 
     {
         while (num_cap<10);
                 aux_cap = num_cap;
@@ -160,9 +155,9 @@ public class clsCaracteristicaNumeros
             capicua = 'S';
         else
             capicua='N';
-        System.out.println(capicua);
+        return capicua;
     }
-    public void mtdPalindrome() throws NumberFormatException, IOException 
+    public void mtdPalindrome()
     {
         System.out.println("Éste metodo no pudo ser resuelto.");
     }
