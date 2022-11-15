@@ -1,10 +1,35 @@
 package pktSemestral;
 
+import javax.swing.JOptionPane;
+
 public class clsMetodos 
 {
-    public void psswr() 
+    public boolean psswr(int intento, int ping, int veces,Boolean login) 
     {
-        
+        do{
+            intento=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el ping: "));
+            if(intento==ping)
+               {
+                JOptionPane.showMessageDialog(null, "Acceso correcto");
+                veces=3;
+                login=true;
+               }
+            else
+               {
+                JOptionPane.showMessageDialog(null, "ping incorrecto.");
+                login=false;
+                veces=veces+1;
+               }
+            if(veces==3 && login==true)
+            {
+                JOptionPane.showMessageDialog(null, "¡Bienvenido!");
+            }
+            else if(veces==3 && login==false)
+            {
+                JOptionPane.showMessageDialog(null, "¡Acceso denegado!");
+            }
+        }while(veces<3);
+        return login;      
     }
     public double impuestos(char[] impuesto, int[] existencia, double[] precio, int y) 
     {
