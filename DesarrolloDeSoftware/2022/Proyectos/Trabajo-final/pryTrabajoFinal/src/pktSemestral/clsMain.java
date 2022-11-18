@@ -7,12 +7,13 @@ public class clsMain
 	{
 		clsMetodos mtd = new clsMetodos();
 		
-		//	aquí pide la contraseña
-		int intento=0, ping=1234, veces=0;
-		boolean login=mtd.psswr(intento, ping, veces, login=false);
+		//	aquí se pide y verifica la contraseña (la contraseña es "admin")
+		Boolean login = mtd.psswr(login=false);
 
 		if(login==true)
 		{
+			JOptionPane.showMessageDialog(null, "Bienvenido al proyecto final.");
+
 			String[] codigo=new String[10];
 			String[] descripcion=new String[10];
 			char[] impuesto=new char[10];
@@ -24,20 +25,23 @@ public class clsMain
 			int i = 0;
 			for(int x=1;x<=10;x++)
 			{
-				codigo[i]=JOptionPane.showInputDialog("Ingrese el código del árticulo #"+x);
-				descripcion[i]=JOptionPane.showInputDialog("Ingrese la descripción del árticulo #"+x);
-				impuesto[i] = (JOptionPane.showInputDialog("Ingrese el impuesto del árticulo #"+x)).charAt(0);
-				existencia[i]=Integer.parseInt(JOptionPane.showInputDialog("Ingrese cantidad del árticulo #"+x));
-				precio[i]=Double.parseDouble(JOptionPane.showInputDialog("Ingrese el precio del árticulo #"+x));
+				codigo[i]=JOptionPane.showInputDialog("Ingrese el código del artículo #"+x);
+				descripcion[i]=JOptionPane.showInputDialog("Ingrese la descripción del artículo #"+x);
+				impuesto[i] = (JOptionPane.showInputDialog("Ingrese el impuesto del artículo #"+x)).charAt(0);
+				existencia[i]=Integer.parseInt(JOptionPane.showInputDialog("Ingrese cantidad del artículo #"+x));
+				precio[i]=Double.parseDouble(JOptionPane.showInputDialog("Ingrese el precio del artículo #"+x));
 				i++;
 			}
 
 			//	calculo de impuesto
+			double impuestoTotal = 0.0;
 			double[] impuestoProducto = new double[10];
 			for(int y=0;y<10;y++)
 			{
 				impuestoProducto[y]=mtd.impuestos(impuesto, existencia,precio,y);
+				impuestoTotal += impuestoProducto[y];
 			}
+			impuestoTotal=Math.round(impuestoTotal*100.0)/100.0;
 
 			//	calculo del valor de cada producto (costo)
 			for(int r=0;r<10;r++)
@@ -45,9 +49,9 @@ public class clsMain
 				costo[r]=mtd.valorProducto(precio,existencia,impuestoProducto,r);
 			}
 
-			double vlrTotal=mtd.calc(vlrTotal=0.0, costo);
-			String mostrarInforme = mtd.informe(mostrarInforme="", codigo,descripcion,precio,existencia,costo,vlrTotal);
-			JOptionPane.showMessageDialog(null, mostrarInforme);
+			double vlrTotal=mtd.calc(vlrTotal=0.0, costo, impuestoProducto);
+			String mostrarInforme = mtd.informe(mostrarInforme="", codigo,descripcion,precio,existencia,costo,vlrTotal,impuestoTotal);
+			JOptionPane.showMessageDialog(null, mostrarInforme,"Informe",1);
 		}
 		JOptionPane.showMessageDialog(null, "El programa ha finalizado.\nTenga un excelente día.");
 	}

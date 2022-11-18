@@ -1,35 +1,36 @@
 package pktSemestral;
-
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class clsMetodos 
 {
-    public boolean psswr(int intento, int ping, int veces,Boolean login) 
+    public boolean psswr(boolean login) 
     {
+        int intentos=0;
+        String password = "admin";
+        String verificacion="";
+        JOptionPane.showMessageDialog(null, "A continuación\ningrese la contraseña...","Login", 1);
         do{
-            intento=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el ping: "));
-            if(intento==ping)
-               {
-                JOptionPane.showMessageDialog(null, "Acceso correcto");
-                veces=3;
-                login=true;
-               }
-            else
-               {
-                JOptionPane.showMessageDialog(null, "ping incorrecto.");
-                login=false;
-                veces=veces+1;
-               }
-            if(veces==3 && login==true)
-            {
-                JOptionPane.showMessageDialog(null, "¡Bienvenido!");
-            }
-            else if(veces==3 && login==false)
-            {
-                JOptionPane.showMessageDialog(null, "¡Acceso denegado!");
-            }
-        }while(veces<3);
-        return login;      
+            JPasswordField contraseña = new JPasswordField();
+            if(JOptionPane.showConfirmDialog(null, contraseña, "Login", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION)
+                verificacion = new String(contraseña.getPassword());
+
+        if(verificacion.equals(password))
+        {
+            JOptionPane.showMessageDialog(null, "Contraseña correcta","Login", 1);
+            login=true;
+            intentos=3;
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Contraseña incorrecta, vuelva a intentar.","Login", 2);
+            intentos+=1;
+        }
+        }while(intentos<3);
+        if(intentos==3 && login==false)
+        {
+            JOptionPane.showMessageDialog(null, "¡Acceso denegado!","Login", 2);
+        }
+        return login;
     }
     public double impuestos(char[] impuesto, int[] existencia, double[] precio, int y) 
     {
@@ -50,26 +51,31 @@ public class clsMetodos
     {
         double valor;
         valor = precio[r]*existencia[r];
-        valor += impuestoProducto[r];
         return valor;
     }
-    public double calc(double vlrTotal,double[] costo) 
+    public double calc(double vlrTotal,double[] costo,double[] impuestoProducto) 
     {
         for(int i=0;i<10;i++)
         {
-            vlrTotal += costo[i];
+            vlrTotal += costo[i]+impuestoProducto[i];
         }
+        vlrTotal=Math.round(vlrTotal*100.0)/100.0;
         return vlrTotal;
     }
-    public String informe(String mostrarInforme, String[] codigo, String[] descripcion, double[] precio, int[] existencia, double[] costo, double vlrTotal) 
+    public String informe(String mostrarInforme, String[] codigo, String[] descripcion, double[] precio, int[] existencia, double[] costo, double vlrTotal,double impuestoTotal) 
     {
-        mostrarInforme="Código  Descripción     costo   cantidad    valor";
+        mostrarInforme = "    Código      Descripción     costo         cantidad         valor   ";
         for(int i=0;i<10;i++)
         {
-            mostrarInforme += "\n"+codigo[i]+"              "+descripcion[i]+"                  "+precio[i]+"          "+existencia[i]+"          "+costo[i];
+            mostrarInforme += "\n       "+codigo[i];
+            mostrarInforme += "      |          "+descripcion[i];
+            mostrarInforme += "      |          "+precio[i];
+            mostrarInforme += "      |          "+existencia[i];
+            mostrarInforme += "      |      "+costo[i];
         }
-        mostrarInforme += "\n   ----------------------------------------------------------------------------    ";
-        mostrarInforme += "\n                                                           Valor total: B./"+((vlrTotal));
+        mostrarInforme += "\n-------------------------------------------------------------------------------------------";
+        mostrarInforme += "\n                                                                             ITBMS total: B./    "+((impuestoTotal));
+        mostrarInforme += "\n                                                                             Valor total: B./    "+((vlrTotal));
         return mostrarInforme;
     }
 }
